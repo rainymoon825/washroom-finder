@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-# washroom-finder
 =======
 # React + TypeScript + Vite
 
@@ -75,5 +73,3 @@ export default defineConfig([
     },
   },
 ])
-```
->>>>>>> 071cbf4 (default)
