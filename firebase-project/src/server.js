@@ -1,15 +1,20 @@
 // src/server.js
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, set, push } from 'firebase/database';
+import { getDatabase, ref, push } from 'firebase/database';
 import firebaseConfig from './config/firebaseConfig';
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
+// References to database nodes
+const userList = ref(database, 'users');
+const reviewList = ref(database, 'reviews');
+const washroomList = ref(database, 'washrooms');
+
 // Function to add a user to the database
-function addUser(userId, name, points) {
-  set(ref(database, 'users/' + userId), {
+function addUser(name, points) {
+  push(userList, {
     name: name,
     points: points
   })
@@ -22,8 +27,8 @@ function addUser(userId, name, points) {
 }
 
 // Function to add a washroom to the database
-function addWashroom(washroomId, type, rating, image, openTimes, coordinates, neighborhood) {
-  set(ref(database, 'washrooms/' + washroomId), {
+function addWashroom(type, rating, image, openTimes, coordinates, neighborhood) {
+  push(washroomList, {
     type: type,
     rating: rating,
     image: image,
@@ -32,24 +37,24 @@ function addWashroom(washroomId, type, rating, image, openTimes, coordinates, ne
     neighborhood: neighborhood
   })
     .then(() => {
-      console.log(`Washroom ${washroomId} added successfully!`);
+      console.log(`Washroom added successfully!`);
     })
     .catch((error) => {
       console.error("Error adding washroom:", error);
     });
 }
 
-// Function to add a review to a washroom
-function addReview(washroomId, reviewId, userId, comment, stars) {
-  const reviewRef = ref(database, `washrooms/${washroomId}/reviews/${reviewId}`);
-  set(reviewRef, {
+// Function to add a review to the database
+function addReview(washroomId, userId, comment, stars) {
+  push(reviewList, {
+    washroomId: washroomId,
     userId: userId,
     comment: comment,
     stars: stars,
     timestamp: Date.now()
   })
     .then(() => {
-      console.log(`Review added successfully to washroom ${washroomId}!`);
+      console.log(`Review added successfully for washroom ${washroomId}!`);
     })
     .catch((error) => {
       console.error("Error adding review:", error);
