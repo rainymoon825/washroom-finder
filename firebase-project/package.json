@@ -1,0 +1,14 @@
+{
+  "name": "firebase-project",
+  "version": "1.0.0",
+  "description": "A Firebase project that initializes the Firebase app, analytics, and database.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "firebase": "^9.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
