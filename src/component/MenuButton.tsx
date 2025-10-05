@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Button.css"
 
 interface MenuItem {
   label: string;
@@ -28,8 +28,8 @@ function MenuButton({ onSelect }: Props) {
     <div>
       {children.map((item) => (
         <button
-
           onClick={() => handleItemClick(item)}
+          className = "MenuButton"
         >
           {item.label}
         </button>
