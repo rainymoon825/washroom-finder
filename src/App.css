@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -38,4 +40,41 @@
 
 .Header{
     text-decoration: underline rgba(24, 54, 71) 3px; 
+}
+
+.Leaderboard{
+    font-size: 60px;
+    color: rgb(155, 240, 144);
+}
+
+.LeaderboardFirst{
+    
+    font-size: 50px;
+    color: gold;
+    
+}
+
+.LeaderboardSecond{
+
+    font-size: 50px;
+    color: silver;
+;
+}
+
+.LeaderboardThird{
+
+    font-size: 50px;
+    color: brown;
+}
+
+.Leaderboard,
+.LeaderboardFirst, 
+.LeaderboardSecond,
+.LeaderboardThird,
+.LeaderboardOther {
+    margin: 0;
+    padding: 0;
+    font-family: 'VT323', monospace;
+    background-color: black;
+    border-bottom: 2px solid white;
 }
