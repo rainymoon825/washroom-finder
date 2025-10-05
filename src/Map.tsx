@@ -2,15 +2,19 @@ import { useEffect } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useNavigate } from 'react-router-dom';
-import washrooms from './data/public-washrooms.json';
 import './App.css';
+import { getWashrooms } from '../firebase-project/src/server';
 
+async function Map() {
+  const washrooms = await getWashrooms();
 
-function MapPage() {
+  if (!washrooms) {
+    return <div>Loading washrooms...</div>;
+  }
+
   const navigate = useNavigate();
 
   useEffect(() => {
-
     if (!document.getElementById('map')) return;
     const map = L.map('map').setView([49.2827, -123.1207], 13); // Vancouver coordinates
 
@@ -28,23 +32,25 @@ function MapPage() {
     });
 
     // Add red markers for each washroom
-    washrooms.forEach((washroom) => {
-      const { lat, lon } = washroom.geo_point_2d;
+
+    Object.keys(washrooms).forEach((washroomKey: string) => {
+      const washroom = washrooms[washroomKey];
+      const { lat, lon } = washroom.coordinates;
       const marker = L.marker([lat, lon], { icon: redIcon }).addTo(map);
 
       marker.on('click', () => {
-        navigate('/review', { state: { washroom } });
+        navigate('/washroom', { state: { washroom } });
       });
 
-      marker.bindPopup(`<b>${washroom.park_name || 'Unknown Location'}</b><br>${washroom.location}`);
+      marker.bindPopup(`<b>${washroom.neighborhood || 'Unknown Location'}</b><br>${washroom.coordinates}`);
     });
 
     return () => {
-      map.remove();
+      map.remove(); // Clean up the map instance on component unmount
     };
   }, [navigate]);
 
   return <div id="map" style={{ height: '100vh', width: '100%' }}></div>;
 }
 
-export default MapPage;
+export default Map;

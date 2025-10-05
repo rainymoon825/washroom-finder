@@ -1,53 +1,34 @@
+import { useState } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./Washroom.css";
 import "../App.css";
 
-type WashroomProps = {
-  type: string;
-  rating: number;
-  image: string;
-  openTimes: string;
-  coordinates: { lat: number; lng: number };
-  neighborhood: string;
-};
 
-const Washroom: React.FC<WashroomProps> = ({
-  type,
-  rating,
-  image,
-  openTimes,
-  coordinates,
-  neighborhood,
-}) => {
+function WashroomPage() {
+  const location = useLocation();
+  const { washroom } = location.state || {};
+
+  if (!washroom) {
+    return <div>No washroom data available.</div>;
+  }
+
   return (
     <div className="container">
       <div className="card">
-        <img src={image} alt={type} className="washroom-image" />
         <div className="washroom-info">
-          <h2>{type}</h2>
-          <p>⭐ {rating}/5</p>
-          <p>🕒 {openTimes}</p>
-          <p>
-            📍 {coordinates.lat}, {coordinates.lng}
-          </p>
-          <p> {neighborhood}</p>
+          <h1>Review for {washroom.park_name || "Unknown Location"}</h1>
+          <p>Location: {washroom.location}</p>
+          <p>Type: {washroom.type}</p>
+          <p>Wheelchair Access: {washroom.wheelchair_access || "Unknown"}</p>
+          <p>Hours: {washroom.summer_hours || "Unknown"}</p>
+          <p>Notes: {washroom.note || "None"}</p>
+          <h2>Leave a Review</h2>
+          <textarea placeholder="Write your review here..." rows={5} cols={50}></textarea>
+          <button>Submit</button>
         </div>
       </div>
     </div>
   );
-};
-
-const WashroomPage: React.FC = () => {
-  const sample = {
-    type: "Male Washroom",
-    rating: 4.5,
-    image:
-      "https://www.123rf.com/photo_51715357_bathroom-interior-and-toilet-in-modern-washroom.html",
-    openTimes: "6 AM – 10 PM",
-    coordinates: { lat: 49.2827, lng: -123.1207 },
-    neighborhood: "Downtown Vancouver",
-  };
-
-  return <Washroom {...sample} />;
 };
 
 export default WashroomPage;
