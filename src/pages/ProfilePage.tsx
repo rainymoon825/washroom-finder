@@ -31,6 +31,7 @@ function ProfilePage() {
           
           <div className="profile-info">
             <h2>{me.Name || 'User'}</h2>
+            <div className="poop-status">Rank: Poop</div>
             <div className="profile-stats">
               <div className="stat-item">
                 <span className="stat-label">Reviews Given</span>
