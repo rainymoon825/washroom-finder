@@ -1,0 +1,24 @@
+.MenuButton {
+    background-color: rgb(150, 40, 40);
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 60px;
+    width: 425px;
+    cursor: pointer;
+  }
+.LeaderboardButton {
+    background-color: yellow;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    width: 850px;
+    cursor: pointer;
+}

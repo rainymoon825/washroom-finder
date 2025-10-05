@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./Button.css"
+import "./Button.css";
 
 interface MenuItem {
   label: string;
@@ -10,26 +10,20 @@ interface Props {
   onSelect: (item: MenuItem) => void;
 }
 
-function MenuButton({ onSelect }: Props) {
+function LeaderboardButton({ onSelect }: Props) {
   const navigate = useNavigate();
 
-  const children: MenuItem[] = [
-    { label: "Map", path: "/map" },
-    { label: "Load/Verify", path: "/load_or_verify" },
-  ];
+  const children: MenuItem[] = [{ label: "Leaderboard", path: "/leaderboard" }];
 
   const handleItemClick = (item: MenuItem) => {
-    onSelect(item);  
-    navigate(item.path); 
+    onSelect(item);
+    navigate(item.path);
   };
 
   return (
     <div>
       {children.map((item) => (
-        <button
-          onClick={() => handleItemClick(item)}
-          className = "MenuButton"
-        >
+        <button onClick={() => handleItemClick(item)} className="LeaderboardButton">
           {item.label}
         </button>
       ))}
@@ -37,4 +31,4 @@ function MenuButton({ onSelect }: Props) {
   );
 }
 
-export default MenuButton;
+export default LeaderboardButton;
