@@ -13,7 +13,7 @@ const reviewList = ref(database, 'reviews');
 const washroomList = ref(database, 'washrooms');
 
 // Function to add a user to the database
-function addUser(name, points) {
+export function addUser(name, points) {
   push(userList, {
     name: name,
     points: points
@@ -27,7 +27,7 @@ function addUser(name, points) {
 }
 
 // Function to add a washroom to the database
-function addWashroom(type, rating, image, openTimes, coordinates, neighborhood) {
+export function addWashroom(type, rating, image, openTimes, coordinates, neighborhood) {
   push(washroomList, {
     type: type,
     rating: rating,
@@ -45,7 +45,7 @@ function addWashroom(type, rating, image, openTimes, coordinates, neighborhood) 
 }
 
 // Function to add a review to the database
-function addReview(washroomId, userId, comment, stars) {
+export function addReview(washroomId, userId, comment, stars) {
   push(reviewList, {
     washroomId: washroomId,
     userId: userId,
