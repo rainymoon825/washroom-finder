@@ -105,7 +105,10 @@ function MapPage() {
         <h1>🚽 Vancouver Washroom Finder</h1>
         <p>Find public washrooms near you • Click on any marker to view details</p>
       </div>
-      <div id="map" className="map-container"></div>
+      <div className="map-wrapper">
+        <div id="map" className="map-container"></div>
+        <div className="points-box">Poop Points: 10</div>
+      </div>
     </div>
   );
 }
