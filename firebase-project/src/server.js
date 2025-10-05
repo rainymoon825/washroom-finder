@@ -1,6 +1,6 @@
 // src/server.js
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, push } from 'firebase/database';
+import { getDatabase, ref, push, get} from 'firebase/database';
 import firebaseConfig from './config/firebaseConfig';
 
 // Initialize Firebase
@@ -59,4 +59,43 @@ export function addReview(washroomId, userId, comment, stars) {
     .catch((error) => {
       console.error("Error adding review:", error);
     });
+}
+
+export function getWashroom() {
+  get(washroomList).then((snapshot) => {
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      console.log("No data available");
+      return null;
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
+}
+
+export function getUser() {
+  get(userList).then((snapshot) => {
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      console.log("No data available");
+      return null;
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
+}
+
+export function getReview() {
+  get(reviewList).then((snapshot) => {
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      console.log("No data available");
+      return null;
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
 }

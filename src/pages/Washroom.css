@@ -1,28 +1,25 @@
-#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
+.washroom-page {
     text-align: center;
+    padding: 2rem;
+    background-color: #f8fafc;
+    min-height: 100vh;
   }
   
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
+  .washroom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
   }
   
-  
-  .card {
-    padding: 2em;
+  .washroom-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
   }
   
-  .MenuButton {font-size: 60px;
-              width: 425px;}
+  .washroom-info {
+    padding: 1.2rem;
+    text-align: left;
+  }
   
