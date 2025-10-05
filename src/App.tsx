@@ -1,12 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MenuButton from "./component/MenuButton";
 import Map from "./Map";
-import LoadOrVerify from "./LoadOrVerify"
+import LoadOrVerify from "./LoadOrVerify";
 
 function App() {
-  const handleSelect = (item: { label: any; }) => {
-    console.log("Selected:", item.label);
-  };
+  const handleSelect = (item: { label: any }) => {};
 
   return (
     <Router>
