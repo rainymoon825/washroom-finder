@@ -13,11 +13,27 @@ function MapPage() {
   useEffect(() => {
 
     if (!document.getElementById('map')) return;
-    const map = L.map('map').setView([49.2827, -123.1207], 13); // Vancouver coordinates
+    // Center near Fred Kaiser Building (UBC)
+    const kaiserLat = 49.2614;
+    const kaiserLng = -123.2485;
+    const map = L.map('map').setView([kaiserLat, kaiserLng], 16);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
+
+    // Red marker icon for Fred Kaiser Building
+    const redMarkerIcon = L.divIcon({
+      html: '<div style="position: relative; width: 18px; height: 18px; background: #e03131; border: 2px solid #ffffff; border-radius: 50%; box-shadow: 0 2px 6px rgba(0,0,0,0.35);"></div>',
+      className: 'kaiser-marker',
+      iconSize: [18, 18],
+      iconAnchor: [9, 9]
+    });
+
+    // Add red marker at Fred Kaiser Building
+    L.marker([kaiserLat, kaiserLng], { icon: redMarkerIcon })
+      .addTo(map)
+      .bindPopup('<b>Fred Kaiser Building</b>');
 
     // Create custom toilet emoji icon with shadow
     const toiletIcon = L.divIcon({
