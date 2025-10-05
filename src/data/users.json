@@ -2,7 +2,57 @@
     {
         "Name": "Benjamin",
         "ID": 1,
+        "reviewsGiven": 1,
+        "washroomsVisited": 0,
+        "favoriteSpots": 0
+    },
+    {
+        "Name": "Ben",
+        "ID": 2,
+        "reviewsGiven": 5,
+        "washroomsVisited": 0,
+        "favoriteSpots": 0
+    },
+    {
+        "Name": "Caroline",
+        "ID": 3,
+        "reviewsGiven": 1,
+        "washroomsVisited": 0,
+        "favoriteSpots": 0
+    },
+    {
+        "Name": "TheUltimatePisser",
+        "ID": 4,
+        "reviewsGiven": 42,
+        "washroomsVisited": 0,
+        "favoriteSpots": 0
+    },
+    {
+        "Name": "UBCPisser",
+        "ID": 5,
+        "reviewsGiven": 54,
+        "washroomsVisited": 0,
+        "favoriteSpots": 0
+    },
+    {
+        "Name": "ToiletKing",
+        "ID": 6,
+        "reviewsGiven": 100,
+        "washroomsVisited": 0,
+        "favoriteSpots": 0
+    },
+    {
+        "Name": "Andy",
+        "ID": 7,
         "reviewsGiven": 0,
+        "washroomsVisited": 0,
+        "favoriteSpots": 0
+    },
+  
+    {
+        "Name": "FlushLifeAll",
+        "ID": 8,
+        "reviewsGiven": 16,
         "washroomsVisited": 0,
         "favoriteSpots": 0
     }

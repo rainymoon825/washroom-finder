@@ -33,6 +33,12 @@ function ReviewPage() {
     }
     const list = JSON.parse(localStorage.getItem("reviewlist") || "[]");
     const toSave = Array.isArray(list) ? list : [];
+
+    // Increment reviewsGiven for user with ID 1
+    const usersRaw = JSON.parse(localStorage.getItem("userlist") || "[]");
+    const users = Array.isArray(usersRaw) ? usersRaw : [];
+    const userIndex = users.findIndex((u: any) => u && Number(u.ID) === 1);
+
     const entry = {
       TolietIDReviewed: target.ID ?? null,
       UserID: 1,
@@ -40,8 +46,18 @@ function ReviewPage() {
       Rating: rating,
       Timestamp: Math.floor(Date.now() / 1000)
     };
+
+    if (userIndex !== -1) {
+      const current = users[userIndex];
+      const currentCount = typeof current.reviewsGiven === "number" ? current.reviewsGiven : 0;
+      users[userIndex] = { ...current, reviewsGiven: currentCount + 1 };
+      localStorage.setItem("userlist", JSON.stringify(users));
+    }
+
     toSave.push(entry);
     localStorage.setItem("reviewlist", JSON.stringify(toSave));
+    // Notify listeners (Leaderboard, Profile, Washroom) to refresh
+    window.dispatchEvent(new Event("data-updated"));
     alert("Review Submitted!");
   };
 

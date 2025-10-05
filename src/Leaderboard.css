@@ -1,0 +1,115 @@
+.leaderboard-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.leaderboard-card {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 700px;
+  border: 3px solid #333;
+  overflow: hidden;
+}
+
+.leaderboard-header {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.leaderboard-header h1 {
+  margin: 0 0 6px 0;
+  font-size: 1.8rem;
+}
+
+.leaderboard-header p {
+  margin: 0;
+  opacity: 0.95;
+}
+
+.leaderboard-list {
+  background: #f8f9fa;
+}
+
+.leaderboard-row {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.leaderboard-row:last-child {
+  border-bottom: none;
+}
+
+.rank-badge {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 800;
+  color: #212529;
+  background: #e9ecef;
+  border: 2px solid #adb5bd;
+}
+
+.user-name {
+  font-weight: 700;
+  color: #343a40;
+  letter-spacing: 0.2px;
+}
+
+.user-score {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.score-number {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #212529;
+}
+
+.score-label {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+/* Top 3 accents */
+.leaderboard-row.first .rank-badge {
+  background: linear-gradient(135deg, #ffd700, #ffef9f);
+  border-color: #e6c200;
+}
+
+.leaderboard-row.second .rank-badge {
+  background: linear-gradient(135deg, #c0c0c0, #ededed);
+  border-color: #a9a9a9;
+}
+
+.leaderboard-row.third .rank-badge {
+  background: linear-gradient(135deg, #cd7f32, #f0ba8a);
+  border-color: #b76e2b;
+}
+
+@media (max-width: 520px) {
+  .leaderboard-row {
+    grid-template-columns: 48px 1fr;
+  }
+  .user-score {
+    grid-column: 2 / span 1;
+    justify-self: start;
+  }
+}
+
+

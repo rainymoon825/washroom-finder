@@ -6,9 +6,12 @@ interface UserStats {
 }
 
 function Profile() {
+  const users = JSON.parse(localStorage.getItem("userlist") || "[]");
+  const user = users.find((user: any) => user.ID === 1);
+
   const userStats: UserStats = {
-    name: "u/TheUltimatePisser",
-    submissionCount: 42,
+    name: user.name,
+    submissionCount: user.reviewsGiven,
   };
 
   return (
