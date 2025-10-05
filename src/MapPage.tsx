@@ -6,7 +6,7 @@ import washrooms from './data/public-washrooms.json';
 import './App.css';
 
 
-function Map() {
+function MapPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -47,4 +47,4 @@ function Map() {
   return <div id="map" style={{ height: '100vh', width: '100%' }}></div>;
 }
 
-export default Map;
+export default MapPage;

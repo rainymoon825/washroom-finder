@@ -10,12 +10,11 @@ interface Props {
   onSelect: (item: MenuItem) => void;
 }
 
-function MenuButton({ onSelect }: Props) {
+function SubmitButton({ onSelect }: Props) {
   const navigate = useNavigate();
 
   const children: MenuItem[] = [
-    { label: "Map", path: "/map" },
-    { label: "Washroom", path: "/Washroom" },
+    { label: "Submit", path: "/map" },
   ];
 
   const handleItemClick = (item: MenuItem) => {
@@ -28,7 +27,7 @@ function MenuButton({ onSelect }: Props) {
       {children.map((item) => (
         <button
           onClick={() => handleItemClick(item)}
-          className = "MenuButton"
+          className = "SubmitButton"
         >
           {item.label}
         </button>
@@ -37,4 +36,4 @@ function MenuButton({ onSelect }: Props) {
   );
 }
 
-export default MenuButton;
+export default SubmitButton;

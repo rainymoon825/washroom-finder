@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MenuButton from "./component/MenuButton";
-import Map from "./Map";
+import Map from "./MapPage";
 import Washroom from "./pages/Washroom";
 import LeaderboardButton from "./component/LeaderboardButton";
 import Leaderboard from "./Leaderboard";
