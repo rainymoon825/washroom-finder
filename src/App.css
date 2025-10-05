@@ -18,9 +18,18 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-
 .card {
-  padding: 2em;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .MenuButton {font-size: 60px;
