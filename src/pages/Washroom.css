@@ -22,4 +22,17 @@
     padding: 1.2rem;
     text-align: left;
   }
+
+  .LeftAlignContainer {
+    width: 800px;
+  }
+
+  .LeftAlign {
+    text-align: left;
+    align-content: left;
+
+    .ReviewBox {
+        width: 850px;
+      }
+}
   
