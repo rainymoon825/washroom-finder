@@ -18,13 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Map />} />
           <Route path="/map" element={<Map />} />
-<<<<<<< HEAD
-          <Route path="/load_or_verify" element={<LoadOrVerify />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
-          <Route path="/review" element={<ReviewPage />} />
-=======
-          <Route path="/leaderboard" element={<Leaderboard />} />
->>>>>>> 93e63b69ba3d8d626aef245cd058471bbdf53a11
           <Route path="/washroom" element={<Washroom />} />
         </Routes>
       </div>
