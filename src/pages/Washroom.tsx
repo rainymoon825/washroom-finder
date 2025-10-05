@@ -3,6 +3,7 @@ import { useLocation, useSearchParams } from "react-router-dom";
 import "./Washroom.css";
 import "../App.css";
 import "./ReviewPage.css";
+import toliet from "../assets/toliet.jpg";
 
 
 function WashroomPage() {
@@ -119,7 +120,7 @@ function WashroomPage() {
           </div>
 
           <div className="card-image-area">
-            <div className="washroom-emoji">🚽</div>
+            <img className="washroom-image" src={toliet} alt={activeWashroom.park_name}/>
             <div className="card-type-badge">{activeWashroom.type || "Public Washroom"}</div>
           </div>
 
