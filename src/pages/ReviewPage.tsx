@@ -188,7 +188,6 @@ function ReviewPage() {
               <label>
                 Accessibility
                 <input type="checkbox" checked={form.wheelchair_access} onChange={(e) => setForm({ ...form, wheelchair_access: e.target.checked })} style={{ marginLeft: 8 }} />
-                <span style={{ marginLeft: 6 }}>{form.wheelchair_access ? 'Yes' : 'No'}</span>
               </label>
               <label>
                 Hours

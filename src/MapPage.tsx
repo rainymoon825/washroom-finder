@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useNavigate } from 'react-router-dom';
@@ -8,6 +8,13 @@ import './MapPage.css';
 
 function MapPage() {
   const washrooms = JSON.parse(localStorage.getItem("washroomlist") || "[]");
+  const [poopPoints, setPoopPoints] = useState<number>(() => {
+    const usersRaw = JSON.parse(localStorage.getItem('userlist') || '[]');
+    const users = Array.isArray(usersRaw) ? usersRaw : [];
+    const me = users.find((u: any) => u && Number(u.ID) === 1);
+    const reviewsGiven = typeof me?.reviewsGiven === 'number' ? me.reviewsGiven : 0;
+    return reviewsGiven * 10;
+  });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -99,6 +106,23 @@ function MapPage() {
     };
   }, [navigate]);
 
+  // Keep poop points in sync with localStorage updates
+  useEffect(() => {
+    const recompute = () => {
+      const usersRaw = JSON.parse(localStorage.getItem('userlist') || '[]');
+      const users = Array.isArray(usersRaw) ? usersRaw : [];
+      const me = users.find((u: any) => u && Number(u.ID) === 1);
+      const reviewsGiven = typeof me?.reviewsGiven === 'number' ? me.reviewsGiven : 0;
+      setPoopPoints(reviewsGiven * 10);
+    };
+    window.addEventListener('data-updated', recompute);
+    window.addEventListener('storage', recompute);
+    return () => {
+      window.removeEventListener('data-updated', recompute);
+      window.removeEventListener('storage', recompute);
+    };
+  }, []);
+
   return (
     <div className="map-page">
       <div className="map-header">
@@ -107,7 +131,7 @@ function MapPage() {
       </div>
       <div className="map-wrapper">
         <div id="map" className="map-container"></div>
-        <div className="points-box">Poop Points: 10</div>
+        <div className="points-box">Poop Points: {poopPoints}</div>
       </div>
     </div>
   );
