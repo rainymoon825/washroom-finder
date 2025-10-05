@@ -5,19 +5,6 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
 
 .card {
   padding: 2em;
@@ -27,5 +14,5 @@
             width: 425px;}
 
 .Header{
-    text-decoration: underline rgb(116, 29, 29) 3px; 
+    text-decoration: underline rgba(24, 54, 71) 3px; 
 }
