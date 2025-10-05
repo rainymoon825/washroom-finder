@@ -1,26 +1,26 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MenuButton from "./component/MenuButton";
+import Navigation from "./component/Navigation";
 import MapPage from "./MapPage";
 import Washroom from "./pages/Washroom";
-import LeaderboardButton from "./component/LeaderboardButton";
 import Leaderboard from "./Leaderboard";
 import ReviewPage from "./pages/ReviewPage";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
-  const handleSelect = () => {};
-
   return (
     <Router>
       <div>
-        <MenuButton onSelect={handleSelect} />
-        <LeaderboardButton onSelect={handleSelect} />
-
-        <Routes>
-          <Route path="/" element={<MapPage />} />
-          <Route path="/map" element={<MapPage />} />
-          <Route path="/leaderboard" element={<Leaderboard />} />
-          <Route path="/washroom" element={<Washroom />} />
-        </Routes>
+        <Navigation />
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<MapPage />} />
+            <Route path="/map" element={<MapPage />} />
+            <Route path="/leaderboard" element={<Leaderboard />} />
+            <Route path="/washroom" element={<Washroom />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/review" element={<ReviewPage />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );

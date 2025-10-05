@@ -1,0 +1,60 @@
+.ProfileButton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  min-width: 100px;
+  justify-content: center;
+}
+
+.ProfileButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.6);
+  background: linear-gradient(135deg, #357abd, #2c5aa0);
+}
+
+.ProfileButton:active {
+  transform: translateY(-1px);
+}
+
+.profile-icon {
+  font-size: 18px;
+}
+
+.profile-text {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .ProfileButton {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 16px;
+    min-width: 80px;
+  }
+  
+  .profile-text {
+    display: none;
+  }
+  
+  .ProfileButton {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    justify-content: center;
+  }
+}

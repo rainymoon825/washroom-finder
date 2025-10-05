@@ -1,0 +1,120 @@
+.map-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8f9fa;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.map-header {
+  background: #ffffff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #dee2e6;
+  z-index: 1000;
+}
+
+.map-header h1 {
+  margin: 0 0 15px 0;
+  color: #495057;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.map-header p {
+  margin: 0;
+  color: #6c757d;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.map-container {
+  flex: 1;
+  width: 100%;
+  height: calc(100vh - 120px);
+  border-radius: 0;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+
+/* Custom marker popup styling */
+.leaflet-popup-content-wrapper {
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: none;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.leaflet-popup-content b {
+  color: #495057;
+  font-size: 1.1rem;
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.custom-popup .leaflet-popup-content {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-popup .leaflet-popup-tip {
+  background: #333;
+}
+
+/* Toilet marker hover effects */
+.toilet-marker {
+  transition: transform 0.2s ease;
+}
+
+.toilet-marker:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .map-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .map-header p {
+    font-size: 1rem;
+  }
+  
+  .map-container {
+    height: calc(100vh - 100px);
+  }
+}
+
+@media (max-width: 480px) {
+  .map-header {
+    padding: 15px;
+  }
+  
+  .map-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .map-header p {
+    font-size: 0.9rem;
+  }
+  
+  .map-container {
+    height: calc(100vh - 80px);
+  }
+}

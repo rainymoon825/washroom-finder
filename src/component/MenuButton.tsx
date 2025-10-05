@@ -15,7 +15,6 @@ function MenuButton({ onSelect }: Props) {
 
   const children: MenuItem[] = [
     { label: "Map", path: "/map" },
-    { label: "Washroom", path: "/Washroom" },
   ];
 
   const handleItemClick = (item: MenuItem) => {
@@ -24,11 +23,12 @@ function MenuButton({ onSelect }: Props) {
   };
 
   return (
-    <div>
-      {children.map((item) => (
+    <div className="menu-buttons-container">
+      {children.map((item, index) => (
         <button
+          key={index}
           onClick={() => handleItemClick(item)}
-          className = "MenuButton"
+          className="MenuButton"
         >
           {item.label}
         </button>
