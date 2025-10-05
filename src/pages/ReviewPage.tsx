@@ -10,8 +10,6 @@ function ReviewPage() {
     alert("Review Submitted!");
   };
 
-  // hello
-  //change2
   if (!washroom) {
     return <div>No washroom data available.</div>;
   }
