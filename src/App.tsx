@@ -17,7 +17,6 @@ function App() {
         <Routes>
           <Route path="/map" element={<Map />} />
           <Route path="/load_or_verify" element={<LoadOrVerify />} />
-          <Route path="/review" element={<ReviewPage />} />
           <Route path="/washroom" element={<Washroom />} />
         </Routes>
       </div>
