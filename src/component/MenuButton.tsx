@@ -15,7 +15,6 @@ function MenuButton({ onSelect }: Props) {
 
   const children: MenuItem[] = [
     { label: "Map", path: "/map" },
-    { label: "Washroom", path: "/Washroom" },
   ];
 
   const handleItemClick = (item: MenuItem) => {

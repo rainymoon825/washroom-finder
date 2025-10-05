@@ -1,24 +1,45 @@
 .MenuButton {
     background-color: rgb(150, 40, 40);
-    border: none;
     color: black;
-    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     font-size: 60px;
-    width: 425px;
-    cursor: pointer;
+    width: 1700px;
+    padding: 10px 15px;
   }
-.LeaderboardButton {
+  
+  .LeaderboardButton {
     background-color: yellow;
     border: none;
     color: black;
-    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     font-size: 30px;
     width: 850px;
     cursor: pointer;
-}
+    padding: 10px 15px;
+  }
+
+  .ProfileButton {
+    padding: 15px;
+  }
+
+  .TopRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+
+html, body {
+    margin-top: 0;
+    padding: 0;
+  }
+  html, body, #root, .AppContainer {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
