@@ -32,6 +32,7 @@ function WashroomPage() {
     }
     const list = JSON.parse(localStorage.getItem("reviewlist") || "[]");
     const toSave = Array.isArray(list) ? list : [];
+
     const entry = {
       TolietIDReviewed: activeWashroom.ID ?? null,
       UserID: 1,
@@ -39,8 +40,16 @@ function WashroomPage() {
       Rating: rating,
       Timestamp: Math.floor(Date.now() / 1000)
     };
+
     toSave.push(entry);
     localStorage.setItem("reviewlist", JSON.stringify(toSave));
+
+    const washrooms = JSON.parse(localStorage.getItem("washroomlist") || "[]");
+    const toSaveW = Array.isArray(washrooms) ? washrooms : [];
+    const washroomIndex = toSaveW.findIndex((w: any) => w && Number(w.ID) === activeWashroom.ID);
+    toSaveW[washroomIndex].Rating = (toSaveW[washroomIndex].Rating || 0) + rating;
+    toSaveW[washroomIndex].reviewNum = (toSaveW[washroomIndex].reviewNum || 0) + 1;
+    localStorage.setItem("washroomlist", JSON.stringify(toSaveW));
 
     // Increment user 1 reviewsGiven
     const usersRaw = JSON.parse(localStorage.getItem("userlist") || "[]");
@@ -115,7 +124,7 @@ function WashroomPage() {
             </div>
             <div className="card-hp">
               <span className="hp-label">CLEANLINESS</span>
-              <span className="hp-value">⭐⭐⭐⭐⭐</span>
+              <div> {activeWashroom.Rating / activeWashroom.reviewNum} ⭐ </div>
             </div>
           </div>
 
@@ -180,7 +189,7 @@ function WashroomPage() {
               <button className="back-button" onClick={handleSubmitReview}>Submit Review</button>
             </div>
             <div className="card-stats" style={{ borderTop: '1px solid #dee2e6' }}>
-              <div className="reviews-header" style={{ marginBottom: 10 }}>
+                 <div className="reviews-header" style={{ marginBottom: 10 }}>
                 <h2 style={{ margin: 0 }}>Past Reviews</h2>
                 <span className="reviews-count">{reviews.length}</span>
               </div>

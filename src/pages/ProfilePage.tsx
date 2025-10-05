@@ -26,7 +26,7 @@ function ProfilePage() {
       <div className="profile-content">
         <div className="profile-card">
           <div className="profile-avatar">
-            <div className="avatar-placeholder">👤</div>
+            <div className="avatar-placeholder">🧔‍♂️</div>
           </div>
           
           <div className="profile-info">
