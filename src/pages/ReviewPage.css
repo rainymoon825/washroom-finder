@@ -1,0 +1,281 @@
+.review-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.pokemon-card {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 600px;
+  border: 3px solid #333;
+  overflow: hidden;
+  position: relative;
+}
+
+.pokemon-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+}
+
+.error-card {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.error-card h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Card Header */
+.card-header {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card-subtitle {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  margin-top: 2px;
+}
+
+.card-hp {
+  text-align: right;
+}
+
+.hp-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.hp-value {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Card Image Area */
+.card-image-area {
+  background: #e9ecef;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.washroom-emoji {
+  font-size: 4rem;
+  margin-bottom: 10px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.card-type-badge {
+  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Stats */
+.card-stats {
+  padding: 20px;
+  background: #f8f9fa;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.stat-row:last-child {
+  border-bottom: none;
+}
+
+.stat-label {
+  font-weight: bold;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  color: #666;
+  font-size: 0.9rem;
+  text-align: right;
+  max-width: 60%;
+  word-wrap: break-word;
+}
+
+/* Card Description */
+.card-description {
+  background: #f8f9fa;
+  padding: 15px 20px;
+  border-top: 1px solid #dee2e6;
+}
+
+.card-description p {
+  margin: 0;
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* Review Section */
+.review-section {
+  padding: 30px;
+  background: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  text-align: center;
+}
+
+.review-section h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.rating-display {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ffc107;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.review-textarea {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 20px auto;
+  padding: 15px;
+  border: 2px solid #dee2e6;
+  border-radius: 15px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  display: block;
+  transition: border-color 0.3s ease;
+}
+
+.review-textarea:focus {
+  outline: none;
+  border-color: #ffc107;
+  box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.1);
+}
+
+/* Card Footer */
+.card-footer {
+  background: #f8f9fa;
+  padding: 15px 20px;
+  text-align: center;
+  border-top: 1px solid #dee2e6;
+}
+
+.back-button {
+  background: #495057;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(73, 80, 87, 0.2);
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(73, 80, 87, 0.3);
+  background: #343a40;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .review-page {
+    padding: 20px 15px;
+  }
+  
+  .pokemon-card {
+    max-width: 100%;
+  }
+  
+  .card-header {
+    padding: 15px;
+  }
+  
+  .card-title h1 {
+    font-size: 1.3rem;
+  }
+  
+  .washroom-emoji {
+    font-size: 3.5rem;
+  }
+  
+  .card-stats,
+  .review-section,
+  .card-footer {
+    padding: 20px;
+  }
+  
+  .review-textarea {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-page {
+    padding: 10px;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .card-hp {
+    text-align: center;
+  }
+  
+  .stat-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .stat-value {
+    text-align: left;
+    max-width: 100%;
+  }
+}

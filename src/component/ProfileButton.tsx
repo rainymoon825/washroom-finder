@@ -1,17 +1,26 @@
 import { useNavigate } from "react-router-dom";
-import "./Button.css";
-import ProfileIcon from "../assets/ProfileIcon.png";
+import "./ProfileButton.css";
 
-function ProfileButton() {
+interface Props {
+  onSelect: () => void;
+}
+
+function ProfileButton({ onSelect }: Props) {
   const navigate = useNavigate();
 
   const handleClick = () => {
+    onSelect();
     navigate("/profile");
   };
 
   return (
-    <button className = "ProfileButton" onClick={handleClick}>
-      <img src = {ProfileIcon}/>
+    <button 
+      onClick={handleClick} 
+      className="ProfileButton"
+      title="View Profile"
+    >
+      <span className="profile-icon">👤</span>
+      <span className="profile-text">Profile</span>
     </button>
   );
 }

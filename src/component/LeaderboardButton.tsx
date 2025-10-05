@@ -21,9 +21,13 @@ function LeaderboardButton({ onSelect }: Props) {
   };
 
   return (
-    <div>
-      {children.map((item) => (
-        <button onClick={() => handleItemClick(item)} className="LeaderboardButton">
+    <div className="leaderboard-buttons-container">
+      {children.map((item, index) => (
+        <button 
+          key={index}
+          onClick={() => handleItemClick(item)} 
+          className="LeaderboardButton"
+        >
           {item.label}
         </button>
       ))}
