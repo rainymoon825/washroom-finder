@@ -10,7 +10,6 @@ function Map() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("washrooms sample:", washrooms[0]);
 
     if (!document.getElementById('map')) return;
     const map = L.map('map').setView([49.2827, -123.1207], 13); // Vancouver coordinates
@@ -41,7 +40,7 @@ function Map() {
     });
 
     return () => {
-      map.remove(); // Clean up the map instance on component unmount
+      map.remove();
     };
   }, [navigate]);
 

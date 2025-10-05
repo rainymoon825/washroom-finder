@@ -11,17 +11,35 @@ function ReviewPage() {
 
   return (
     <div>
-      <h1>Review for {washroom.park_name || "Unknown Location"}</h1>
-      <p>Location: {washroom.location}</p>
-      <p>Type: {washroom.type}</p>
-      <p>Wheelchair Access: {washroom.wheelchair_access || "Unknown"}</p>
-      <p>Hours: {washroom.summer_hours || "Unknown"}</p>
-      <p>Notes: {washroom.note || "None"}</p>
+      <h1>Information for {washroom.park_name || "Unknown"}</h1>
+      <p>
+        Location: {washroom.location || "Unknown"} {"(Verified)"}
+      </p>
+      <p>
+        Type: {washroom.type || "Unknown"} {"(Verified)"}
+      </p>
+      <p>
+        Wheelchair Access: {washroom.wheelchair_access || "Unknown"}{" "}
+        {"(Verified)"}
+      </p>
+      <p>
+        Hours: {washroom.summer_hours || "Unknown"} {"(Verified)"}
+      </p>
 
       <div>
-        <h2>Leave a Review</h2>
-        <textarea placeholder="Write your review here..." rows={5} cols={50}></textarea>
-        <button>Submit</button>
+        <h3 className="LeftAlignContainer">
+          <h3 className="LeftAlign">Current Rating: ⭐⭐⭐⭐⭐ 5.0</h3>
+
+          <h3 className="LeftAlign">
+            <textarea
+              placeholder="Write your review here..."
+              rows={5}
+              cols={50}
+              className="ReviewBox"
+            ></textarea>
+          </h3>
+          <button>Submit</button>
+        </h3>
       </div>
     </div>
   );
