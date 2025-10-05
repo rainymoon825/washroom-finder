@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./Washroom.css";
 import "../App.css";
 
@@ -27,7 +26,9 @@ const Washroom: React.FC<WashroomProps> = ({
           <h2>{type}</h2>
           <p>⭐ {rating}/5</p>
           <p>🕒 {openTimes}</p>
-          <p>📍 {coordinates.lat}, {coordinates.lng}</p>
+          <p>
+            📍 {coordinates.lat}, {coordinates.lng}
+          </p>
           <p> {neighborhood}</p>
         </div>
       </div>
@@ -39,7 +40,8 @@ const WashroomPage: React.FC = () => {
   const sample = {
     type: "Male Washroom",
     rating: 4.5,
-    image: "https://www.123rf.com/photo_51715357_bathroom-interior-and-toilet-in-modern-washroom.html",
+    image:
+      "https://www.123rf.com/photo_51715357_bathroom-interior-and-toilet-in-modern-washroom.html",
     openTimes: "6 AM – 10 PM",
     coordinates: { lat: 49.2827, lng: -123.1207 },
     neighborhood: "Downtown Vancouver",

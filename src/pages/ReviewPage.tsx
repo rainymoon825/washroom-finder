@@ -6,7 +6,9 @@ import MapPage from "../MapPage.tsx";
 function ReviewPage() {
   const location = useLocation();
   const { washroom } = location.state || {};
-  const handleSelect = () => {};
+  const handleSelect = () => {
+    alert("Review Submitted!");
+  };
 
   if (!washroom) {
     return <div>No washroom data available.</div>;
@@ -42,7 +44,7 @@ function ReviewPage() {
                 className="ReviewBox"
               ></textarea>
             </h3>
-            <SubmitButton onSelect = {handleSelect}/>
+            <SubmitButton onSelect={handleSelect} />
           </h3>
         </div>
       </div>
