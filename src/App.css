@@ -117,3 +117,9 @@ html {
     background-color: black;
     border-bottom: 2px solid white;
 }
+
+html, body {
+    margin: 0;
+    background-image: linear-gradient(to right, lightgreen, lightblue, lightgreen);
+  }
+  
